@@ -1,0 +1,109 @@
+\chapter{INTRODUCCION}
+En el ámbito de la industria de la construcción, garantizar la seguridad de los trabajadores es una tarea de suma importancia, donde el uso correcto de los equipos de protección personal (EPP) es esencial para minimizar accidentes y lesiones. Los cascos de seguridad, entre otros elementos de protección, juegan un papel indispensable en la reducción de riesgos. No obstante, aunque existen normativas que exigen su uso, la supervisión en tiempo real de su cumplimiento es un desafío debido a las limitaciones de los métodos tradicionales de monitoreo. Ante esta problemática, las tecnologías basadas en visión por computadora y modelos de inteligencia artificial, como YOLOv8, ofrecen una alternativa prometedora para optimizar la seguridad en las obras.
+
+YOLOv8, cuyo nombre es un acrónimo de "\textit{You Only Look Once}", es uno de los modelos más avanzados para la detección de objetos, capaz de identificar y localizar elementos en imágenes en tiempo real con gran precisión y eficiencia. A pesar de sus capacidades, el desempeño de estos modelos está directamente relacionado con la calidad y cantidad de los conjuntos de datos que se utilizan en su entrenamiento. Aunque existen datasets de acceso público, la mayoría están diseñados para entornos controlados y no reflejan con precisión las condiciones reales de una obra. Esto destaca la necesidad de crear un conjunto de datos específico que represente a los trabajadores en condiciones reales usando EPP, particularmente cascos de seguridad.
+
+El presente trabajo tiene como objetivo principal la creación de un dataset personalizado con imágenes capturadas en una obra de construcción real, que será utilizado para entrenar el modelo YOLOv8. Las fotografías fueron tomadas en el proyecto "comercio sauna" con un dispositivo móvil y luego preprocesadas para cumplir con los estándares necesarios para el entrenamiento del modelo. Además, se implementaron diferentes algoritmos de recorte y técnicas de filtrado, utilizando modelos preentrenados para garantizar que las imágenes seleccionadas sean de alta calidad y pertinentes para el objetivo del estudio.
+
+Para complementar el conjunto de datos, se aplicaron técnicas de aumentación de datos con el fin de expandir el número de imágenes disponibles. También se llevó a cabo el etiquetado manual de los cascos de seguridad presentes en las imágenes utilizando herramientas especializadas, como la plataforma Roboflow. El resultado final es un dataset optimizado que permitirá el entrenamiento eficiente de modelos de detección de EPP en escenarios reales.
+
+\section{Generalidades}
+
+El presente trabajo de investigación tiene como objetivo principal la creación de un dataset personalizado para la detección automática de cascos de seguridad en trabajadores de construcción utilizando el modelo de inteligencia artificial YOLOv8. La importancia de este proyecto radica en la necesidad de mejorar la supervisión del uso de equipos de protección personal (EPP) en tiempo real, ya que la seguridad en obras de construcción es un aspecto crítico para la prevención de accidentes.
+
+La base de este trabajo es el desarrollo de un conjunto de imágenes reales capturadas en una obra de construcción, las cuales se han preprocesado y filtrado para cumplir con los requerimientos del modelo YOLOv8. Este modelo es ampliamente reconocido por su capacidad de detectar objetos en tiempo real con alta precisión, lo que lo convierte en una herramienta eficaz para la vigilancia y monitoreo de condiciones laborales seguras.
+
+El proyecto incluye tanto la recolección y preprocesamiento de datos, como la implementación de técnicas avanzadas de detección de objetos, aumentación de datos y etiquetado de imágenes. Además, se aplican modelos preentrenados de YOLOv8 para mejorar la calidad de las imágenes utilizadas y garantizar la detección precisa de los cascos de seguridad en las fotografías tomadas en un entorno de obra real.
+
+Este trabajo no solo busca contribuir a la mejora de los sistemas de monitoreo en obras de construcción, sino también ofrecer una referencia útil para futuros estudios y desarrollos relacionados con la seguridad en el ámbito laboral a través de la inteligencia artificial y la visión por computadora.
+
+\section{Planteamiento y formulacion del problema}
+
+\subsection{Planteamiento del problema}
+
+En la industria de la construcción, los accidentes laborales continúan siendo una de las principales causas de lesiones graves y fallecimientos. A pesar de la implementación de normativas y la obligatoriedad del uso de equipos de protección personal (EPP), como los cascos de seguridad, el monitoreo efectivo de su uso en tiempo real es limitado. La supervisión manual no es eficiente ni escalable en entornos de trabajo grandes o complejos, lo que conlleva a la necesidad de aplicar nuevas tecnologías para abordar este desafío.
+
+La inteligencia artificial, en particular los modelos de detección de objetos basados en visión por computadora, ha demostrado ser una solución prometedora para la automatización de procesos de seguridad en entornos industriales. Sin embargo, el rendimiento de estos modelos depende en gran medida de la calidad y la relevancia de los datasets utilizados para su entrenamiento. Actualmente, los datasets públicos que contienen imágenes de personas usando EPPs en contextos reales son escasos, y muchos de los disponibles están limitados a entornos controlados, con variaciones limitadas de las condiciones de iluminación, ángulos de visión y contextos laborales.
+
+Este vacío de datasets reales con imágenes de trabajadores usando EPPs en obras de construcción dificulta el desarrollo de soluciones automatizadas eficaces para la detección de equipos de seguridad. Como resultado, es esencial la creación de un dataset personalizado que refleje las condiciones reales de una obra de construcción, permitiendo así entrenar modelos de detección de objetos más precisos y efectivos.
+
+\subsection{Formulación del problema}
+
+El problema central que aborda este trabajo es el siguiente:
+
+\textbf{¿Cómo generar un dataset personalizado que permita entrenar de manera eficaz un modelo de detección de objetos (YOLOv8) para identificar el uso de cascos de seguridad en trabajadores de construcción en un entorno real, mejorando así los sistemas automatizados de supervisión de seguridad?}
+
+\section{Alcances y limitaciones}
+
+\subsection{Alcances}
+
+El presente trabajo de tesis se enfoca en la creación de un dataset personalizado para el entrenamiento del modelo YOLOv8, destinado a la detección de cascos de seguridad en trabajadores de una obra de construcción. El alcance de este proyecto comprende las siguientes actividades:
+
+\begin{itemize}
+  \item \textbf{Recolección de imágenes en obra:} Se capturarán imágenes reales de trabajadores utilizando equipos de protección personal (EPP), específicamente cascos de seguridad, en el entorno de la obra "comercio".
+  \item \textbf{Preprocesamiento de imágenes:} Las imágenes recolectadas serán preprocesadas para ajustar sus dimensiones a los requerimientos del modelo YOLOv8 (640x640 píxeles). Se implementarán tres algoritmos de recorte: corte desde la izquierda, corte centrado y corte con superposición.
+  \item \textbf{Detección y filtrado de imágenes:} Se utilizarán modelos preentrenados de YOLOv8 para detectar personas en las imágenes y recortar las áreas correspondientes. Luego, se aplicará un filtrado adicional para eliminar imágenes que no contengan personas.
+  \item \textbf{Aumentación de datos:} Se aplicarán técnicas de aumentación de datos mediante Keras para incrementar la diversidad del dataset, duplicando la cantidad de imágenes a 1284.
+  \item \textbf{Etiquetado de cascos de seguridad:} Todas las imágenes resultantes serán etiquetadas manualmente con la clase "cascos de seguridad" utilizando la plataforma Roboflow.
+  \item \textbf{Generación del dataset final:} El dataset final podrá ser exportado en formato YOLOv8, listo para ser utilizado en el entrenamiento de modelos de detección de objetos. El resultado será un conjunto de 1248 imágenes etiquetadas y aumentadas, aptas para la detección automatizada de cascos de seguridad en un entorno de obra real.
+\end{itemize}
+
+\subsection{Limitaciones}
+
+Este trabajo presenta algunas limitaciones que deben ser consideradas:
+
+\begin{itemize}
+  \item \textbf{Cantidad de imágenes recolectadas:} Aunque se capturaron imágenes reales en la obra "Comercio", la cantidad de imágenes obtenidas está limitada al acceso disponible y al tiempo de recolección. Esta limitación puede afectar la generalización del modelo a otros entornos de construcción con diferentes características.
+  \item \textbf{Diversidad del entorno:} Las imágenes fueron capturadas en un solo entorno de construcción. Esto implica que el dataset podría no cubrir suficientemente otros escenarios o condiciones de obras que presenten variaciones en iluminación, ángulos de cámara, tipos de obras o vestimenta de los trabajadores.
+  \item \textbf{Filtrado de imágenes:} A pesar de los esfuerzos por filtrar las imágenes sin personas utilizando modelos preentrenados, es posible que algunas imágenes recortadas sigan conteniendo elementos irrelevantes o áreas vacías, lo que puede impactar en el rendimiento final del modelo.
+  \item \textbf{Técnicas de recorte y detección:} Los algoritmos de recorte desarrollados y los modelos de detección utilizados (YOLOv8 en sus variantes) pueden no ser óptimos para todas las imágenes debido a las variaciones en los tamaños y posiciones de los trabajadores en las fotografías.
+\end{itemize}
+
+Estas limitaciones sugieren que, aunque el dataset generado es adecuado para su uso en contextos similares al de la obra "Comercio", se requiere una validación adicional en entornos más diversos y un refinamiento continuo de los modelos de detección para asegurar su robustez en situaciones reales más variadas.
+
+\section{Objetivos}
+
+\subsection{Objetivo general}
+
+Generar un dataset personalizado de imágenes reales de trabajadores en una obra de construcción utilizando cascos de seguridad, con el fin de entrenar el modelo de detección de objetos YOLOv8 para su aplicación en la supervisión automatizada de EPPs.
+
+\subsection{Objetivos específicos}
+
+\begin{itemize}
+  \item Realizar una revisión exhaustiva de la bibliografía existente sobre detección de objetos y datasets relacionados con la seguridad en obras de construcción.
+  \item Recolectar imágenes en un entorno de construcción real, tomando fotografías de trabajadores utilizando equipos de protección personal (EPPs), específicamente cascos de seguridad.
+  \item Preprocesar las imágenes mediante algoritmos de recorte, ajustándolas a las dimensiones requeridas para el entrenamiento del modelo YOLOv8.
+  \item Aplicar técnicas de detección de personas utilizando modelos preentrenados para optimizar el recorte de áreas relevantes en las imágenes.
+  \item Filtrar las imágenes recortadas para eliminar aquellas que no contienen personas y aplicar aumentación de datos para aumentar la diversidad del datase
+  \item Etiquetar manualmente las imágenes con la clase \textit{``helmet"} utilizando plataformas especializadas.
+\end{itemize}
+
+\section{Antecedentes}
+
+\subsection{Referencias internacionales}
+
+Según (Mahmud, y otros, 2023) \cite{mahmud2023safety} en su trabajo titulado \textit{``Safety Helmet Deteccion of
+Workers in Construction Site Using YOLOv8''}, los autores abordan los frecuentes accidentes en la industria de la construcción debido al incumplimiento de las normas de seguridad, particularmente el uso de cascos. El sistema que los autores plantean es el uso de imágenes recopiladas de trabajadores de construcción y técnicas de visión por computadora usando el modelo YOLOv8, para la detección en tiempo real de cascos, incluso en condiciones adversas como niebla o poca luz. El sistema no solo activa alarmas en caso de incumplimiento, sino que también notifica a los operadores responsables, mejorando significativamente la supervisión y reduciendo la dependencia de la observación
+manual.
+
+\noindent
+El proceso de entrenamiento del modelo incluyó el preprocesamiento y la ampliación del conjunto de datos, aumentando la robustez del sistema para generalizar en escenarios no vistos. Los resultados mostraron una alta precisión y efectividad en la detección de cascos,medidos mediante métricas de precisión y recall. La investigación también propone futuras mejoras, como la integración de botones de emergencia en los cascos para alertar rápidamente en caso de accidentes. Estos antecedentes son cruciales para el presente estudio, ya que demuestran la viabilidad y los beneficios de implementar YOLOv8 en la mejora de la seguridad en sitios de construcción.
+
+Por otro lado, los autores (Kim, Kim, y Jeong, 2023), en su trabajo titulado \textit{``Application of YOLO v5 and v8 for Recognition of Safety Risk Factors at Construction Sites''} \cite{kim2023application}, abordan el creciente número de accidentes en sitios industriales, especialmente en la industria de la construcción en Corea de Sur, donde las tasas de accidentes y fatalidades han aumentado significativamente. El estudio que presentan destaca la necesidad urgente de una gestión continua de la seguridad para prevenir accidentes, ya que los accidentes no solo causan daños irreparables a los trabajadores, sino que también afectan la reputación y genera pérdidas financieras para las organizaciones. Ante este escenario, se han realizado varios intentos de aplicar inteligencia artificial para la detección de riesgos en sitios de construcción.
+
+\noindent
+El objetivo que los autores plantearon es mejorar la precisión en el reconocimiento y clasificación de objetos utilizando dos versiones de YOLO, v5 y v8, comparando sus resultados. El estudio se centra en tres clases: equipos pesados de construcción, trabajadores, EPP, recopilando datos de imágenes a través de web crawling para reflejar diversas condiciones ambientales. Utilizando el modelo YOLO v5, y el recién lanzado v8, el estudio implementa varias técnicas para ajustar los hiperparámetros, taza de aprendizaje y detener el entrenamiento anticipadamente para evitar el sobreajuste. Los resultados muestran mejoras significativas en la precisión de detección, proporcionando una base sólida para el uso de técnicas de visión computacional en la gestión de seguridad en sitios de construcción civil.
+
+En el trabajo, de (Liao, Chen, Liu, Yu, y Zhao, 2023), titulado \textit{``Compunter vision-based monitoring method of non-wearing helmet evetns using face recognition''} \cite{liao2023computer} abordan el problema de la falta de uso de cascos de seguridad en la construcción debido a la incomodidad y la disminución de la eficiencia laboral. El estudio propone un método innovador de reconocimiento facial para identificar a los trabajadores que no usan casco y contactarlos directamente, para corregir este comportamiento de manera inmediata. Esta metodología supera los límites de los métodos tradicionales que solo reaccionan después del evento, mejorando así la seguridad en tiempo real.
+
+\noindent
+El articulo introduce el Progressive Screening Analysis (PSA) para optimizar la eficiencia del reconocimiento facial en sitios de construcción reales, utilizando un conjunto de datos especializado llamado RealSiteFace Datase que contiene 831 trabajadores con 16, 620 imágenes. El PSA se implementa en tres niveles utilizando algoritmos InsightFace, KNN, SVM, logrando una precisión de 0.977, un recall de 0.884 y F1 score de 0.928. Estos resultados validan la efectividad del método propuesto para detectar cuando un trabajador no está usando casco de seguridad y contactar rápidamente a los trabajadores implicados, proporcionando una solución práctica y eficiente para mejorar la seguridad laboral en la construcción.
+
+\subsection{Referencias nacionales}
+
+En la tesis de (Oviedo Agramonte, 2024) titulada "Implementación de un Sistema de Detección de Equipos de Protección Personal Mediante Visión Artificial para Trabajadores del Sector Industrial" \cite{oviedo2024implementacion}, aborda la implementación de un sistema de detección de equipos de protección personal mediante visión artificial y aprendizaje de máquina para supervisar a los trabajadores del sector industrial. La investigación incluyó una revisión exhaustiva de la literatura y la utilización de técnicas experimentales avanzadas para desarrollar un sistema capaz de monitorear en tiempo real el uso de equipo de protección personal, específicamente cascos de seguridad. Utilizando cámaras y algoritmos de visión artificial, logró un análisis preciso de las imágenes y video capturados para verificar el cumplimiento de las normativas de seguridad.
+
+\noindent
+El estudio lo realizó en un entorno controlado que simulaba un área de trabajo industrial, permitiendo la evaluación del sistema en condiciones cercanas a las reales. Las conclusiones destacaron la importancia de la tecnología de visión artificial y aprendizaje de máquina en la mejora de la seguridad laboral, subrayando su potencial para reducir accidentes y mejorar la conformidad con las regulaciones de seguridad. Además, resalta que la falta de uso de EPP es una causa común de accidentes laborales, y que la implementación de estos sistemas puede mitigar riesgos, aumentar la estabilidad laboral y generar confianza en la contratación de nuevos empleados.
+
+Por otro lado, en la tesis de (Alarcón Carpio y Poma Astete, 2021) en su trabajo titulado “Desarrollo de un algoritmo computacional de detección de equipos de protección eléctrica en personas, orientado a sistemas de vigilancia basados en cámaras IP” \cite{pomadesarrollo}, los autores implementaron un sistema de detección de equipos de protección personal mediante visión artificial y aprendizaje de máquina, orientado a sistemas de vigilancia basados en cámaras IP. El proyecto propuso un algoritmo que realiza el monitoreo autónomo de equipos de protección personal de cabeza y manos, utilizando la red neuronal OpenPose para extraer imágenes específicas de brazos y cabeza de los trabajadores, seguidas por redes neuronales convolucionales entrenadas para clasificar la existencia de equipos de protección personal. El sistema fue implementado en la empresa Distribución Eléctrica S.A., permitiendo a los usuarios visualizar alertas generadas por el algoritmo y recibir notificaciones por correo electrónico.

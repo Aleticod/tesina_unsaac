@@ -1,0 +1,75 @@
+\ProvidesPackage{UnsaacTitle}
+\RequirePackage{graphicx}
+\newcommand*{\university}[1]{\gdef\@university{#1}}
+
+\newcommand*{\faculty}[1]{\gdef\@faculty{#1}}
+
+\newcommand*{\school}[1]{\gdef\@school{#1}}
+
+\newcommand*{\project}[1]{\gdef\project{#1}}
+
+\newcommand*{\supervisor}[1]{\gdef\supervisor{#1}}
+
+\newcommand*{\@university}{UNIVERSIDAD NACIONAL DE SAN ANTONIO ABAD DEL CUSCO}
+\newcommand*{\@faculty}{FACULTAD DE INGENIERIA ELECTRICA, ELECTRONICA, INFORMATICA Y MECANICA}
+\newcommand*{\@school}{ESCUELA PROFESIONAL DE INGENIERIA INFORMATICA Y DE SISTEMAS}
+\newcommand*{\@project}{FINAL YEAR PROJECT}
+\newcommand*{\@supervisor}{MG. KARELIA MEDINA MIRANDA}
+
+\renewcommand*{\maketitle}{
+  \begin{titlepage}
+    \begin{center}
+      \textbf{\@university}\par
+
+      \vspace{0.5cm}
+
+      \textbf{\@faculty}\par
+
+      \vspace{0.5cm}
+
+      \textbf{\@school}\par
+
+      \vspace{0.5cm}
+
+      {\includegraphics[width=0.4\textwidth]{escudo}\par}
+
+      \vspace{0.2cm}
+
+      \textbf{TRABAJO DE INVESTIGACION}\par
+
+      \vspace{0.5cm}
+
+      \textbf{\@title}\par
+
+      \vspace{1cm}
+
+      \textbf{ELABORADO POR}\par
+
+      \vspace{0.2cm}
+
+      \textbf{\@author}\par
+
+      \vfill
+
+      \textbf{Para obtar el Grado Academico de Bachiller en Ingenieria Informatica y de Sistemas}\par
+
+      \vfill
+
+      \textbf{\@supervisor}\par
+
+      \vspace{0.2cm}
+
+      \textbf{DIRECTORA DE ESCULA PROFESIONAL}\par
+
+      \vfill
+
+      \textbf{CUSCO - PERU}\par
+
+      \vfill
+
+      \textbf{2024}
+
+    \end{center}
+  \end{titlepage}
+}
+\endinput

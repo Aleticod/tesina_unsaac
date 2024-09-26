@@ -1,0 +1,74 @@
+\documentclass[12pt, oneside]{book}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  left=25.4mm,
+  right=25.4mm,
+  top=25.4mm,
+  bottom=25.4mm,
+  }
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{setspace}
+
+\usepackage{UnsaacTitle}
+\author{ALEX HARVEY PFOCCORI QUISPE}
+\title{GENERACIÓN DE UN DATASET PERSONALIZADO PARA LA DETECCIÓN AUTOMÁTICA DE CASCOS DE SEGURIDAD EN TRABAJADORES DE CONSTRUCCIÓN UTILIZANDO EL MODELO YOLOv8}
+\usepackage{graphicx}
+
+
+\usepackage[
+backend=biber,
+style=ieee,
+]{biblatex}
+\addbibresource{bibliography.bib}
+% \usepackage{titlesec}
+% \titleformat{\chapter}
+%   [hang] % Estilo del formato (hace que el título quede alineado)
+%   {\normalfont\LARGE\bfseries} % Estilo del texto
+%   {CAPÍTULO \thechapter.} % Texto que aparece antes del título (número de capítulo seguido de un punto)
+%   {1em} % Espacio entre "CAPÍTULO 1." y el título
+%   {\MakeUppercase} % Hace que el título del capítulo esté en mayúsculas
+
+
+\usepackage[hidelinks]{hyperref}
+\linespread{1.25}
+
+\begin{document}
+\maketitle
+
+\doublespacing
+
+% Include initial sections
+\input{declaration}
+\input{acknowledgment}
+\input{summary}
+\input{abstract}
+\input{introduction}
+
+% Main content
+% \renewcommand{\contentsname}{INDICE}
+\tableofcontents
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+% Includes chapters
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/conclusions}
+\include{chapters/recomendations}
+
+% Bibliography
+\printbibliography
+\addcontentsline{toc}{chapter}{BIBLIOGRAFIA}
+
+
+\end{document}

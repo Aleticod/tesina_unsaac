@@ -1,6 +1,6 @@
-\chapter{METODOLOGIA DE LA INVESTIGACION}
+\chapter{METODOLOGÍA DE LA INVESTIGACIÓN}
 
-\section{Enfoque de la investigación}
+\section{Enfoque de la Investigación}
 
 La presente investigación tiene un enfoque cuantitativo y experimental, ya que se busca generar un dataset que sirva como entrada para el entrenamiento de un modelo de detección de objetos (YOLOv8) y evaluar su desempeño en la identificación de equipos de protección personal (EPP), específicamente cascos de seguridad, en un entorno de obra real. El enfoque cuantitativo se justifica por la medición de variables como la precisión del modelo y la calidad de las imágenes procesadas, mientras que el enfoque experimental se debe a la implementación y prueba de diferentes algoritmos de corte y técnicas de preprocesamiento de imágenes.
 
@@ -14,12 +14,12 @@ El diseño de la investigación es no experimental, ya que no se manipularán di
 
 La obra seleccionada para la toma de imágenes es el proyecto denominado ``COMERCIO''. Se eligió este entorno porque refleja condiciones reales de trabajo en construcción, donde los trabajadores utilizan equipos de protección personal, incluyendo cascos de seguridad. Se solicitó previamente el permiso necesario para acceder a la obra y realizar la toma de fotografías sin interferir con las actividades de la obra.
 
-La obra esta ubicada en la region de Arequipa, en el distrito de Cono Norte, Asentamiento Poblacional Asociacion de Pequenos Industriales y Artesanos Arequipa APPIAR Mz N Lotes 1.
+La obra está ubicada en la región de Arequipa, en el distrito de Cono Norte, Asentamiento Poblacional Asociación de Pequeños Industriales y Artesanos Arequipa APPIAR Mz N Lotes 1.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/comercio.png}
-  \caption{Ubicacion referencial de la obra ``Comercio''.}
+  \caption{Ubicación referencial de la obra ``Comercio''.}
   \label{fig:comercio}
 \end{figure}
 
@@ -30,7 +30,7 @@ Para la captura de las imágenes, se utilizó un dispositivo móvil de la maraca
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/honor.jpg}
-  \caption{Dispositivo movil Honor X8a utilizado para la toma de fotografias.}
+  \caption{Dispositivo movil Honor X8a utilizado para la toma de fotografías.}
   \label{fig:honor}
 \end{figure}
 
@@ -52,7 +52,7 @@ Se realizaron capturas de imágenes durante varias jornadas de trabajo en la obr
 Las imágenes capturadas originalmente con una resolución de 5992x4344 píxeles fueron redimensionadas a 640x640 píxeles, que es el tamaño estándar requerido por el modelo YOLOv8 para su entrenamiento. Este proceso de redimensionamiento se llevó a cabo utilizando tres algoritmos diferentes de corte:
 
 \begin{itemize}
-  \item \textbf{Corte desde la izquierda:} Se inicia el recorte de las imágenes desde el borde superior izquierdo, generando múltiples imágenes de 640x640 píxeles hasta cubrir el área de la imagen original. Se deja un residuo en la parte final derecha con una dimension menor a 640 pixeles, de la misma manera en la parte inferior como se muestra en la figura \ref{fig:left_cropping}
+  \item \textbf{Recorte desde la izquierda:} Se inicia el recorte de las imágenes desde el borde superior izquierdo, generando múltiples imágenes de 640x640 píxeles hasta cubrir el área de la imagen original. Se deja un residuo en la parte final derecha con una dimension menor a 640 pixeles, de la misma manera en la parte inferior como se muestra en la figura \ref{fig:left_cropping}.
 
 \begin{figure}[!ht]
   \centering
@@ -61,21 +61,21 @@ Las imágenes capturadas originalmente con una resolución de 5992x4344 píxeles
   \label{fig:left_cropping}
 \end{figure}
 
-\item \textbf{Corte centrado:} El recorte se realiza dividiendo el residuo de la imagen original entre los bordes izquierdo y derecho, así como entre el borde superior e inferior, para centrar la imagen de 640x640 píxeles en la escena como se muestra en la figura \ref{fig:center_cropping}.
+\item \textbf{Recorte centrado:} El recorte se realiza dividiendo el residuo de la imagen original entre los bordes izquierdo y derecho, así como entre el borde superior e inferior, para centrar la imagen de 640x640 píxeles en la escena como se muestra en la figura \ref{fig:center_cropping}.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/center_cropping.png}
-  \caption{Esquema de corte centrado.}
+  \caption{Esquema de recorte centrado.}
   \label{fig:center_cropping}
 \end{figure}
 
-\item \textbf{Corte con superposición:} Se recortan imágenes de 640x640 píxeles con una pequeña porción de superposición entre ellas, generando imágenes adicionales para asegurar que todos los objetos presentes en la escena original estén representados como se muestra en la figura \ref{fig:full_cropping}.
+\item \textbf{Recorte con superposición:} Se recortan imágenes de 640x640 píxeles con una pequeña porción de superposición entre ellas, generando imágenes adicionales para asegurar que todos los objetos presentes en la escena original estén representados como se muestra en la figura \ref{fig:full_cropping}.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/full_cropping.png}
-  \caption{Esquema de corte con superposición.}
+  \caption{Esquema de recorte con superposición.}
   \label{fig:full_cropping}
 \end{figure}
 
@@ -97,7 +97,7 @@ Para mejorar la generalización del modelo YOLOv8 durante el entrenamiento, se a
 
 \section{Etiquetado de Imágenes}
 
-El etiquetado de las imágenes se llevó a cabo en la plataforma Roboflow como se muestra en la figura \ref{fig:roboflow_use}, una herramienta especializada para el etiquetado. Se creó un proyecto denominado ``helmet detection'', donde se cargaron las 1284 imágenes procesadas y aumentadas. Cada imagen fue revisada manualmente para etiquetar los cascos de seguridad, asignándoles la clase "helmet" en el formato compatible con YOLOv8.
+El etiquetado de las imágenes se llevó a cabo en la plataforma Roboflow como se muestra en la figura \ref{fig:roboflow_use}, una herramienta especializada para el etiquetado. Se creó un proyecto denominado ``helmet detection'', donde se cargaron las 1248 imágenes procesadas y aumentadas. Cada imagen fue revisada manualmente para etiquetar los cascos de seguridad, asignándoles la clase \textit{``helmet''} en el formato compatible con YOLOv8.
 
 \begin{figure}[!ht]
   \centering

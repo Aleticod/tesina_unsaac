@@ -1,32 +1,32 @@
-\chapter{RESULTADOS Y DISCUSION}
+\chapter{RESULTADOS Y DISCUSIÓN}
 
 \section{Resultados de Imagenes Recortadas}
 
 \subsection{Resultados de Recorte por la Izquierda}
 
-El procedimiento se realiza el recorte se explicó en el item 3.4.1. Los resultados obtenidos mediante esta tecnica se muestra en la figura \ref{fig:left_use}.
+El procedimiento de realizar el recorte se explicó en el item 3.4.1. Los resultados obtenidos mediante esta técnica se muestra en la figura \ref{fig:left_use}.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/left_use.png}
-  \caption{Ejemplo de resultado obtenido mediante el recorte por la izquierda.}
+  \caption{Ejemplo del resultado obtenido mediante el recorte por la izquierda.}
   \label{fig:left_use}
 \end{figure}
 
 \subsection{Resultados de Recorte Centrado}
 
-Los resultados obtenidos mediante la tecnica de recorte centrado se muestra en la siguiente figura \ref{fig:center_use}.
+Los resultados obtenidos mediante la técnica de recorte centrado se muestra en la siguiente figura \ref{fig:center_use}.
 
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=.49\linewidth]{images/center_use.png}
-  \caption{Ejemplo de resultado obtenido mediante el recorte centrao.}
+  \caption{Ejemplo de resultado obtenido mediante el recorte centrado.}
   \label{fig:center_use}
 \end{figure}
 
 \subsection{Resultados de Recorte Superpuesto}
 
-Los resultados obtenidos medainte la tecnica de recorte superpuesto se muestra en la siguiente figura \ref{fig:full_use}.
+Los resultados obtenidos mediante la técnica de recorte superpuesto se muestra en la siguiente figura \ref{fig:full_use}.
 
 \begin{figure}[!ht]
   \centering
@@ -37,11 +37,11 @@ Los resultados obtenidos medainte la tecnica de recorte superpuesto se muestra e
 
 \subsection{Resultados de Recorte por Reconocimiento}
 
-Los resultados obtenidos mediante la tecnica de reconocimiento con el modelo preentrenado de yolov8m. El recorte se realizo a partir de la deteccion del centro de la persona detectada, dandole las dimensiones de 640x640 pixles.
+Los resultados obtenidos mediante la técnica de reconocimiento personas con el modelo preentrenado de yolov8m. El recorte se realizo a partir de la detección de las coordenadas de posición de la persona detectada, dandole las dimensiones de 640x640 pixles para el recorte.
 
-\subsection{Resumen Segun las Tecnicas de Recorte}
+\subsection{Resumen Segun las Técnicas de Recorte}
 
-La siguiente tabla \ref{tab:summary_table} muestra el resultado de haber utilizado 4 tecnicas de recorte de imagenes.
+La siguiente tabla \ref{tab:summary_table} muestra el resultado de haber utilizado 4 técnicas de recorte de imagenes.
 
 \begin{table}[ht]
   \centering
@@ -54,13 +54,13 @@ La siguiente tabla \ref{tab:summary_table} muestra el resultado de haber utiliza
       \textbf{Recorte con yolov8} & - & 289 \\ \hline
       \textbf{total} & \textbf{11349} & \textbf{1754} \\ \hline
   \end{tabular}
-  \caption{Cantidad de imagenes despues de aplicar las 4 tecnicas de recorte antes del filtrado y despues del filtrado.}
+  \caption{Cantidad de imagenes después de aplicar las 4 técnicas de recorte antes del filtrado y después del filtrado.}
   \label{tab:summary_table}
 \end{table}
 
 \subsection{Resultado Final Obtenido}
 
-El resultado final obtenido despues de aplicar el primer filtro con la configuracion por defecto del modelo  preentrenado yolov8m, el segundo filtro con un nivel de confianza del 90\% del modelo preentrenado yolov8x y finalmente la tecnica de aumentacion de datos se muestra en el siguiente cuadro \ref{tab:final_report}.
+El resultado final obtenido después de aplicar el primer filtro con la configuración por defecto del modelo  preentrenado yolov8m, el segundo filtro con un nivel de confianza del 90\% del modelo preentrenado yolov8x y finalmente la técnica de aumentacion de datos se muestra en el siguiente cuadro \ref{tab:final_report}.
 
 \begin{table}[ht]
   \centering
@@ -71,7 +71,7 @@ El resultado final obtenido despues de aplicar el primer filtro con la configura
       \textbf{Segundo filtro} & 624 \\ \hline
       \textbf{Aumentación de datos} & 1248 \\ \hline
   \end{tabular}
-  \caption{Cantidad de imagenes obtenidos despues de las tecnicas de filtro y aumentacion de datos.}
+  \caption{Cantidad de imágenes obtenidas despues de las técnicas de filtro y aumentación de datos.}
   \label{tab:final_report}
 \end{table}
 

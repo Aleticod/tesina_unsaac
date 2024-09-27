@@ -1,7 +1,7 @@
 \thispagestyle{plain}
 
 \begin{center}
-  \textbf{INTRODUCCION}
+  \textbf{INTRODUCCIÓN}
 \end{center}
 
 \vspace{1cm}
@@ -9,9 +9,9 @@
 \noindent
 En el ámbito de la construcción, la seguridad de los trabajadores es una prioridad fundamental, y el uso adecuado de equipos de protección personal (EPP) es crucial para prevenir accidentes y lesiones. Los cascos de seguridad, juegan un rol vital en la mitigación de riesgos. Sin embargo, a pesar de las regulaciones y normativas que promueven su uso, la supervisión del cumplimiento en tiempo real puede resultar difícil debido a las limitaciones humanas y tecnológicas. Es en este contexto donde las soluciones basadas en visión por computadora y modelos de inteligencia artificial, como YOLOv8, ofrecen un enfoque innovador para mejorar la seguridad en las obras.
 
-YOLOv8 (\textit{You Only Look Once}) es uno de los modelos de detección de objetos más avanzados y precisos, capaz de identificar y localizar objetos en imágenes en tiempo real con alta eficiencia. Sin embargo, el rendimiento de estos modelos depende en gran medida de la calidad y cantidad de los datasets utilizados durante su entrenamiento. Si bien existen diversos datasets públicos, la mayoría están diseñados para entornos controlados y no reflejan adecuadamente las condiciones reales de una obra de construcción. Esto plantea la necesidad de crear un dataset específico que capture a los trabajadores en un entorno real.
+YOLOv8 \textit{(You Only Look Once)} es uno de los modelos de detección de objetos más avanzados y precisos, capaz de identificar y localizar objetos en imágenes en tiempo real con alta eficiencia. Sin embargo, el rendimiento de estos modelos depende en gran medida de la calidad y cantidad de los datasets utilizados durante su entrenamiento. Si bien existen diversos datasets públicos, la mayoría están diseñados para entornos controlados y no reflejan adecuadamente las condiciones reales de una obra de construcción. Esto plantea la necesidad de crear un dataset específico que capture a los trabajadores en un entorno real.
 
-Este trabajo de investigación tiene como objetivo principal la generación de un dataset personalizado con imágenes reales tomadas en una obra de construcción, el cual servirá como base para el entrenamiento del modelo YOLOv8. Las imágenes fueron obtenidas en el proyecto "Comercio" utilizando un dispositivo móvil, y posteriormente preprocesadas para cumplir con los estándares requeridos para el entrenamiento del modelo. Además, se desarrollaron distintos algoritmos de recorte y técnicas de filtrado, apoyados por el uso de modelos preentrenados.
+Este trabajo de investigación tiene como objetivo principal la generación de un dataset personalizado con imágenes reales tomadas en una obra de construcción, el cual servirá como base para el entrenamiento del modelo YOLOv8. Las imágenes fueron obtenidas en el proyecto ``Comercio'' utilizando un dispositivo móvil de la marca Honor, y posteriormente preprocesadas para cumplir con los estándares requeridos para el entrenamiento del modelo. Además, se desarrollaron distintos algoritmos de recorte y técnicas de filtrado, apoyados por el uso de modelos preentrenados.
 
 La investigación también incluye la aplicación de técnicas de aumentación de datos para expandir el conjunto de imágenes y el etiquetado manual de cascos de seguridad, empleando herramientas como la plataforma Roboflow. El resultado final es un datasetp para el entrenamiento de modelos de detección de EPPs en contextos reales.
 
